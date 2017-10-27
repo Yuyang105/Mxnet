@@ -1,1 +1,2 @@
-# Mxnet
+# LeetCode
+Learning notes ;)
