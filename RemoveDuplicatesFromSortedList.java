@@ -15,21 +15,27 @@ Given 1->1->2->3->3, return 1->2->3.
  *     ListNode(int x) { val = x; }
  * }
  */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-        if (head == null) return null;
-        
-        ListNode current = head;
-        
-        while (current != null) {
-            if (current.next != null && current.val == current.next.val) {
-                ListNode dummy = current.next;
-                while (dummy.next != null && dummy.next.val == current.val) {
-                    dummy = dummy.next;
-                }
-                current.next = dummy.next;
+        if (head == null) {
+            return null;
+        }
+
+        ListNode node = head;
+        while (node.next != null) {
+            if (node.val == node.next.val) {
+                node.next = node.next.next;
+            } else {
+                node = node.next;
             }
-            current = current.next;
         }
         return head;
     }
