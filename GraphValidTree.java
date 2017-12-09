@@ -47,6 +47,10 @@ class Solution {
     /** Solution */
     public boolean validTree(int n, int[][] edges) {
         if (edges == null) return false;
+          // tree should have n nodes with n-1 edges
+        if (n - 1 != edges.length) {
+            return false;
+        }
         
         UnionFind uf = new UnionFind(n);
         
@@ -61,11 +65,14 @@ class Solution {
                 uf.union(x, y);
         }
         
+        /** 
         int fa = uf.find(0);
         for (int i = 1; i < n; i ++) {
             if (fa != uf.find(i))
                 return false;
         }
+        */
+        
         return true;
     }
 }
