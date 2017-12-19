@@ -32,6 +32,12 @@ Example ouput:
 +-------+-------+
 '''
 # Write your MySQL query statement below
-SELECT Employee.name, Bonus.bonus
-FROM Emplyee LEFT OUTER JOIN Bonus ON Employee.empid = Bonus.empid
-WHERE bonus < 1000 OR bonus IS NULL;
+SELECT
+    Employee.name, Bonus.bonus
+FROM
+    Employee
+        LEFT JOIN
+    Bonus ON Employee.empid = Bonus.empid
+WHERE
+    bonus < 1000 OR bonus IS NULL
+;
