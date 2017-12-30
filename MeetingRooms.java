@@ -38,7 +38,7 @@ class Solution {
         return true;
     }
 }
-
+ 
 class Point {
     int flag, time;
     public Point(int flag, int time) {
