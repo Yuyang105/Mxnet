@@ -27,7 +27,7 @@ class Solution {
         }
         Collections.sort(point, Point.PC);
         
-        int start = -1, end = 0, count = 0;
+        int start = -1, count = 0;
         for (Point p : point) {
             if (p.flag == 1) {
                 count++;
