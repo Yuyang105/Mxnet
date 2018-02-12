@@ -26,24 +26,38 @@ return its bottom-up level order traversal as:
  * }
  */
 class Solution {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        List<List<Integer>> res = new LinkedList<List<Integer>>();
+    // queue
+    public List<List<Integer>> levelOrderBottom1(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
-        
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
-        
         while (!queue.isEmpty()) {
-            List<Integer> level = new ArrayList<Integer>();
             int size = queue.size();
+            List<Integer> level = new ArrayList<>();
             for (int i = 0; i < size; i++) {
-                TreeNode node = queue.poll();
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
-                level.add(node.val);
+                TreeNode cur = queue.poll();
+                level.add(cur.val);
+                if (cur.left != null) queue.offer(cur.left);
+                if (cur.right != null) queue.offer(cur.right);
             }
             res.add(0, level);
         }
         return res;
+    }
+    
+    // inorder recursive
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) return res;
+        helper(res, root, 0);
+        return res;
+    }
+    private void helper(List<List<Integer>> res, TreeNode root, int level) {
+        if (root == null) return;
+        if (level >= res.size()) res.add(0, new ArrayList<>());
+        res.get(res.size() - level - 1).add(root.val);
+        helper(res, root.left, level + 1);
+        helper(res, root.right, level + 1);
     }
 }
