@@ -17,6 +17,7 @@ Special thanks to @ts for adding this problem and creating all test cases.
 */
 
 class Solution {
+    // 逆序
     public int titleToNumber(String s) {
         int res = 0;
         if (s == null) return res;
@@ -25,5 +26,14 @@ class Solution {
             res += Math.pow(26, i) * (s.charAt(j) - 'A' + 1);
         
         return res + s.charAt(s.length() - 1) - 'A' + 1;
+    }
+    
+    // 顺序 明显这个更好
+    public int titleToNumber(String s) {
+        int res = 0;
+        for (int i = 0; i < s.length(); i++) {
+            res = 26 * res + (s.charAt(i) - 'A' + 1);
+        }
+        return res;
     }
 }
