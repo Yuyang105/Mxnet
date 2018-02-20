@@ -1,4 +1,10 @@
 /**
+
+虽然输入是BST, 还是用hashmap找补集，dfs左右找。
+
+*/
+
+/**
 Given a Binary Search Tree and a target number, return true if there exist two elements in the BST such that their sum is equal to the given target.
 
 Example 1:
