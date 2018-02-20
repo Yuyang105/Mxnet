@@ -1,4 +1,19 @@
 /**
+
+题目大意: 给你一个由字母和数字组成车牌。另外给你一些单词，
+让你找一个最短的单词能够覆盖住车牌中的字母（不考虑大小写）。如果有多个解，输出第一个解。
+
+We count the number of letters in both word and licensePlate, 
+converting to lowercase and ignoring non-letter characters. 
+If the count of each letter is greater or equal in the word, 
+then that word completes the licensePlate.
+
+时间复杂度: O(N) where N is the length of words.
+空间复杂度: O(1) in additional space.
+
+*/
+
+/**
 Find the minimum length word from a given dictionary words, which has all the letters from the string licensePlate. Such a word is said to complete the given string licensePlate
 
 Here, for letters we ignore case. For example, "P" on the licensePlate still matches "p" on the word.
