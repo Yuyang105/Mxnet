@@ -1,4 +1,12 @@
 /**
+
+验证回文串，允许删除一个字符。所以，额外添加一个helper method。
+主方法中，一旦发现一次不匹配，弹给辅助方法。
+辅助方法，一旦发现一次不匹配，直接拜拜。
+
+*/
+
+/**
 Given a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome.
 
 Example 1:
