@@ -1,3 +1,10 @@
+/** 
+
+和有cd的做法差不多。buy, sell, pre_buy 三个状态推成滚动数组 O(1)空间
+
+*/
+
+
 /**
 Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.
 
