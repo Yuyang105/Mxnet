@@ -1,3 +1,11 @@
+/**
+
+自整除数：每一位的数字能把自己整除。
+
+直接暴力找：检查每个candidate。时间复杂度O(N)，空间复杂度O(1)。
+
+*/
+
 /** 
 A self-dividing number is a number that is divisible by every digit it contains.
 
