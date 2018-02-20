@@ -1,4 +1,21 @@
 /**
+
+1.  直接排序，然后返回中间值。有点cheating的意思。
+    时间复杂度：O(nlogn), 空间复杂度：O(1)。
+
+2.  HashMap: 遍历一遍数组，给每个元素计数。
+             key是元素，value是出现次数，一旦出现次数超过一半，返回。
+    时间复杂度：O(n), 空间复杂度：O(n)。
+
+3.  boyer-moore：起一个candidate，起一个count，遍历一次数组。
+                 if count = 0，candidate等于当前元素。
+                 if 当前元素 = candidate，count++；否则 count--；
+                 最终返回candidate。
+    时间复杂度：O(n), 空间复杂度：O(1)。
+
+*/
+
+/**
 Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
 
 You may assume that the array is non-empty and the majority element always exist in the array.
