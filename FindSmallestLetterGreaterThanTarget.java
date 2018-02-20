@@ -1,4 +1,13 @@
 /**
+
+两种做法，
+1. 直接生找，时间复杂度O(n)。好处是，无所谓字符数组是否排好序。
+
+2. 二分法找，时间复杂度O(log n)。
+
+*/
+
+/**
 Given a list of sorted characters letters containing only lowercase letters, and given a target letter target, find the smallest element in the list that is larger than the given target.
 
 Letters also wrap around. For example, if the target is target = 'z' and letters = ['a', 'b'], the answer is 'a'.
