@@ -1,4 +1,12 @@
 /**
+
+题目大意：求给定字符串S中的子串，子串满足：0和1配对出现，并且所有的0或者1都是连续出现的。
+
+直接遍历一次通过交换两个相邻连续子串长度的方法，每次res只加1，而不是加相邻计数的较小值。
+
+*/
+
+/**
 Give a string s, count the number of non-empty (contiguous) substrings that have the same number of 0's and 1's, and all the 0's and all the 1's in these substrings are grouped consecutively.
 
 Substrings that occur multiple times are counted the number of times they occur.
