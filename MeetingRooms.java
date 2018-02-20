@@ -1,4 +1,14 @@
 /**
+
+扫描线，把时间看成一条线，也就是timeline，我们加入points。
+
+此时，我们就需要新建一个point类，一个是时间点，一个是记录它是个开始点/结束点。
+
+然后一路扫过去~
+
+*/
+
+/**
 Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), determine if a person could attend all meetings.
 
 For example,
