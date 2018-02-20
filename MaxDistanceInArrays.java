@@ -1,4 +1,14 @@
 /**
+
+list中的每一个list是有序的，所以list.get(0)是最小的，list.get(list.size() - 1)是最大的。 
+用当前数组的最大值减去min，用最小值减去max。结合当前list更新最大值和最小值。
+
+Time complexity : O(n)O(n). We traverse over the listlist of length nn once only.
+Space complexity : O(1)O(1). Constant extra space is used.
+
+*/
+
+/**
 Given m arrays, and each array is sorted in ascending order. Now you can pick up two integers from two different arrays (each array picks one) and calculate the distance. We define the distance between two integers a and b to be their absolute difference |a-b|. Your task is to find the maximum distance.
 
 Example 1:
