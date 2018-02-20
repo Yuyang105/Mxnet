@@ -1,4 +1,13 @@
 /**
+
+这道题目给了我们一个 m*n 的matrix， 起初都是0， 根据operation给其中一部分区域加1。最后要return 最大值integer的个数。
+
+我们可以从另一个角度出发，把这个题目转化成图形来理解，最大的值的区域就是所有operation的交集。
+如何找到这个区域呢，我们需要记录一个min x 和min y 来求出交集的区域 = x*y， 相当于在求面积。
+
+*/
+
+/**
 Given an m * n matrix M initialized with all 0's and several update operations.
 
 Operations are represented by a 2D array, and each operation is represented by an array with two positive integers a and b, which means M[i][j] should be added by one for all 0 <= i < a and 0 <= j < b.
