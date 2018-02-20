@@ -1,4 +1,12 @@
 /**
+
+油桶填色，二维矩阵，第三维为颜色。连通的区域全部换成新颜色。
+
+所以，直接用dfs做。时间复杂度O(mn)，空间复杂度O(1)。
+
+*/
+
+/**
 An image is represented by a 2-D array of integers, each integer representing the pixel value of the image (from 0 to 65535).
 
 Given a coordinate (sr, sc) representing the starting pixel (row and column) of the flood fill, and a pixel value newColor, "flood fill" the image.
