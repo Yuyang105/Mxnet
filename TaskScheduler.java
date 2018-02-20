@@ -1,4 +1,11 @@
 /**
+
+和358, 767重排字符串的做法一样
+需要一个helper method来抓下一个最大的，优先放最大的。
+
+*/
+
+/**
 Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent different tasks.Tasks could be done without original order. Each task could be done in one interval. For each interval, CPU could finish one task or just be idle.
 
 However, there is a non-negative cooling interval n that means between two same tasks, there must be at least n intervals that CPU are doing different tasks or just be idle.
