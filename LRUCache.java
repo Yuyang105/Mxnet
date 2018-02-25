@@ -3,6 +3,12 @@
 既然我们有key和value，所以我们一定需要一个HashMap。既然我们每次都需要重新排序，并且要求时间复杂度为O(1)，所以我们还需要LinkedList用来插入。
 LinkedList只能解决O(1)插入，但是我们还需要删除，所以我们需要： ==> HashMap + Double LinkedList,
 
+所以数据结构是这样的：
+HashMap<Integer key, Node node> map;
+Node head;
+Node tail;
+int capacity;
+
 */
 
 class LRUCache {
