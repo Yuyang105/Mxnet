@@ -9,6 +9,12 @@
 对半分，sum += sum， multiple += multiple。
 
 */
+
+/**
+Divide two integers without using multiplication, division and mod operator.
+
+If it is overflow, return MAX_INT.
+*/
 class Solution {
     public int divide(int dividend, int divisor) {
         if (divisor == 0) return Integer.MAX_VALUE;
