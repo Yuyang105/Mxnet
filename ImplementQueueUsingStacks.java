@@ -1,54 +1,86 @@
 /**
-Implement the following operations of a queue using stacks.
+两种做法：
 
-push(x) -- Push element x to the back of queue.
-pop() -- Removes the element from in front of queue.
-peek() -- Get the front element.
-empty() -- Return whether the queue is empty.
-Notes:
-You must use only standard operations of a stack -- which means only push to top, peek/pop from top, size, and is empty operations are valid.
-Depending on your language, stack may not be supported natively. You may simulate a stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack.
-You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).
+第一种：push O(1) pop O(n)
+    push的时候，直接压入s1，pop的时候，全部先压入s2，再取s2的头
+    
+第二种：push O(n) pop O(1)
+    push的时候，如果s1不空，就把s1里面的都倒入s2，然后往s2压入应该压入的元素x，再倒回s1.
+
+
 */
-
 class MyQueue {
-    private Stack<Integer> a, b;
-
-    /** Initialize your data structure here. */
+    Stack <Integer> s1;
+    Stack <Integer> s2;
+    
     public MyQueue() {
-        a = new Stack<Integer>();
-        b = new Stack<Integer>();
-        
+        s1 = new Stack<Integer>();
+        s2 = new Stack<Integer>();
     }
     
-    /** Push element x to the back of queue. */
+    // time: O(n)
     public void push(int x) {
-        a.push(x);
+        while (!s1.isEmpty()) {
+            s2.push(s1.pop());
+        }
+        s2.push(x);
+        while(!s2.isEmpty()) {
+            s1.push(s2.pop());
+        }
     }
     
-    /** Removes the element from in front of queue and returns that element. */
+    // time: O(1)
     public int pop() {
-        if (b.empty()) {
-            while (!a.empty()) {
-                b.push(a.pop());
-            }
-        }
-        return b.pop();
+        return s1.pop();
     }
     
-    /** Get the front element. */
+    // time: O(1)
     public int peek() {
-        if (b.empty()) {
-            while(!a.empty()) {
-                b.push(a.pop());
-            }
-        }
-        return b.peek();
+        return s1.peek();
     }
     
-    /** Returns whether the queue is empty. */
     public boolean empty() {
-        return a.empty() && b.empty();
+        return s1.isEmpty() && s2.isEmpty();
+    }
+}
+
+
+class MyQueue1 {
+
+    Stack<Integer> s1;
+    Stack<Integer> s2;
+    
+    public MyQueue1() {
+        s1 = new Stack<Integer>();
+        s2 = new Stack<Integer>();
+    }
+    
+    // time: O(1)
+    public void push(int x) {
+        s1.push(x);
+    }
+    
+    // time: O(n)
+    public int pop() {
+        if (s2.isEmpty()) {
+            while (!s1.isEmpty())
+                s2.push(s1.pop());
+        }
+        return s2.pop();
+    }
+    
+    // time: O(n)
+    public int peek() {
+        if (s2.isEmpty()) {
+            while (!s1.isEmpty())
+                s2.push(s1.pop());
+        }
+        return s2.peek();
+    }
+    
+    // time: O(1)
+    public boolean empty() {
+        return s1.isEmpty() && s2.isEmpty();
     }
 }
 
