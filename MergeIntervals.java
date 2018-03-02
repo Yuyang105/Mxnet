@@ -1,4 +1,15 @@
 /**
+
+合并重合时间。
+
+起手start = -1，count = 0。
+当我们遇到时间起点，count++，如果此时start = -1， 更新start值。
+当我们遇到时间结点，count--，如果此时count = 0，往res插入现在的interval，将start变回-1。
+
+*/
+
+
+/**
 Given a collection of intervals, merge all overlapping intervals.
 
 For example,
