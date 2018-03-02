@@ -9,14 +9,6 @@
 */
 
 /**
-Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), determine if a person could attend all meetings.
-
-For example,
-Given [[0, 30],[5, 10],[15, 20]],
-return false.
-*/
-
-/**
  * Definition for an interval.
  * public class Interval {
  *     int start;
@@ -28,6 +20,16 @@ return false.
 
 class Solution {
     public boolean canAttendMeetings(Interval[] intervals) {
+        Arrays.sort(intervals, (x, y) -> x.start - y.start);
+        for (int i = 1; i < intervals.length; i++) {
+            if (intervals[i - 1].end > intervals[i].start) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public boolean canAttendMeetings1(Interval[] intervals) {
         if (intervals == null || intervals.length == 0) return true;
         
         int count = 0;
@@ -48,7 +50,7 @@ class Solution {
         return true;
     }
 }
- 
+
 class Point {
     int flag, time;
     public Point(int flag, int time) {
